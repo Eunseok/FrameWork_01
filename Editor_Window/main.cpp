@@ -8,6 +8,9 @@
 
 //#pragma comment (lib, "..\\x64\\Debug\\FrameWork_WIndow.lib")
 
+f::Application application;
+
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -54,6 +57,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, //프로그램의 인스턴스 �
     //PeekMessage : 메세지큐의 메세지 유무의 상관 없이 함수가 리턴된다.
     //              리턴 값이 true인 경우 메세지가 있고 false인경우에는 메세지가 없다고 카르켜 준다
 
+    
+
     while (true)
     {
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) 
@@ -70,6 +75,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, //프로그램의 인스턴스 �
         {
             //메세지가 없을 경우 여기서 처리
             //게임 로직이 들어가면 된다.
+            application.Run();
         }
     }
 
@@ -137,6 +143,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
+   application.Initialize(hWnd);
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
