@@ -135,15 +135,22 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
+
+   // 윈도우창 크기 
+   const UINT width = 1600;
+   const UINT height = 900;
+   //
+
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, 1600, 900, nullptr, nullptr, hInstance, nullptr);
+      CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
       return FALSE;
    }
 
-   application.Initialize(hWnd);
+   application.Initialize(hWnd, width, height);
+
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
@@ -161,7 +168,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
+ {
     switch (message)
     {
     case WM_COMMAND:
@@ -186,11 +193,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
 
+            //HBRUSH blueBrush = CreateSolidBrush(RGB(0, 0, 255));
+            //HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush);
+
+            //Ellipse(hdc, 100, 100, 200, 200);
+
+            //SelectObject(hdc, oldBrush);
+            //DeleteObject(blueBrush);
+
             // DC란 화면에 출력에 필요한 모든 정보를 가지는 데이터 구조체이며,
             // GDI모듈에 의해서 관리된ㄷ가.
             // 어떤 폰트를 사용할건가?, 어떤 선의 굵기를 정해줄건가 어떤 색삭으로 그려줄건가
             // 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행할 수 있다.
+             
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+
             EndPaint(hWnd, &ps);
         }
         break;
