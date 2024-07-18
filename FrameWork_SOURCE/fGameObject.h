@@ -12,13 +12,13 @@ namespace f {
 		void LateUpdate();
 		void Render(HDC hdc);
 
-		/*void SetPosition(float x, float y)
+		void SetPosition(float x, float y)
 		{
 			mX = x;
 			mY = y;
 		}
 
-		float GetPositionX() { return mX; }
+		/*float GetPositionX() { return mX; }
 		float GetPositionY() { return mY; }*/
 	private:
 		//게임오브젝트의 좌표

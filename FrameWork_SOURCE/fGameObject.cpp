@@ -41,10 +41,10 @@ namespace f
 
     void GameObject::Render(HDC hdc)
     {
-        HBRUSH redBrush = CreateSolidBrush(RGB(255, 0, 0));
+        HBRUSH redBrush = CreateSolidBrush(RGB(rand()% 255, rand() % 255, rand() % 255));
         HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, redBrush);
 
-        Rectangle(hdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
+        Ellipse(hdc, mX, mY, 100 + mX, 100 + mY);
 
         SelectObject(hdc, oldBrush);
         DeleteObject(redBrush);

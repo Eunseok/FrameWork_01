@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 
 #include "..\\FrameWork_SOURCE\\fApplication.h"
+#include "..\\FrameWork_WIndow\\fLoadScene.h"
 
 //#pragma comment (lib, "..\\x64\\Debug\\FrameWork_WIndow.lib")
 
@@ -45,6 +46,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, //프로그램의 인스턴스 �
     {
         return FALSE;
     }
+
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_EDITORWINDOW));
 
@@ -136,23 +138,34 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
 
-   // 윈도우창 크기 
-   const UINT width = 1600;
-   const UINT height = 900;
-   //
+   RECT rect = { 0, 0, 1600, 900 }; // 원하는 클라이언트 영역 크기 (800x600)
+   AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, FALSE);
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
+
+   HWND hWnd = CreateWindowW(szWindowClass
+       , szTitle
+       , WS_OVERLAPPEDWINDOW
+       , CW_USEDEFAULT
+       , CW_USEDEFAULT
+       , rect.right - rect.left // 조정된 너비
+       , rect.bottom - rect.top // 조정된 높이
+       , nullptr
+       , nullptr
+       , hInstance
+       , nullptr);
 
    if (!hWnd)
    {
       return FALSE;
    }
 
-   application.Initialize(hWnd, width, height);
+   application.Initialize(hWnd);
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+   
+   //load Scene
+   f::LoadScene();
 
    return TRUE; 
 }
@@ -208,8 +221,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
              
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
 
-            EndPaint(hWnd, &ps);
+            EndPaint(hWnd, &ps); 
         }
+        break;
+    case WM_SIZE:
+    {
+        int width = LOWORD(lParam);
+        int height = HIWORD(lParam);
+    }
         break;
     case WM_DESTROY:
         PostQuitMessage(0);
