@@ -133,9 +133,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="fLoadScene.h" />
+    <ClInclude Include="fPlayer.h" />
     <ClInclude Include="fPlayScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="fPlayer.cpp" />
     <ClCompile Include="fPlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -16,20 +16,26 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Commoninclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)fApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fTransform.cpp" />
   </ItemGroup>
 </Project>
