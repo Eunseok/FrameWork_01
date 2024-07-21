@@ -6,6 +6,7 @@
 #include "fInput.h"
 #include "fTitleScene.h"
 #include "fSceneManager.h"
+#include "fObject.h"
 
 namespace f
 {
@@ -17,19 +18,12 @@ namespace f
 	}
 	void PlayScene::Initialize()
 	{
-		bg = new Player();
 
-		Transform* tr
-			= bg->AddComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
-		tr->SetName(L"TR");
-
-		SpriteRenderer* sr
-			= bg->AddComponent<SpriteRenderer>();
+		bg = object::Instantiate<Player>
+			(enums::eLayerType::BackGround, Vector2(10, 10));
+		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SR");
 		sr->ImageLoad(L"C:\\Users\\asp67\\source\\repos\\FrameWork_01\\Resources\\CloudOcean.png");
-
-		AddGameObject(bg, eLayerType::BackGround);
 	}
 	void PlayScene::Update()
 	{
@@ -53,8 +47,5 @@ namespace f
 	}
 	void PlayScene::OnExit()
 	{
-		Transform* tr
-			= bg->GetComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
 	}
 }

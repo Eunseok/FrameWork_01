@@ -85,6 +85,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)fEnums.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)fObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Helpers">

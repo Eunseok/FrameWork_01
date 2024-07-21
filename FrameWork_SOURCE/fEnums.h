@@ -1,6 +1,6 @@
 #pragma once
 
-namespace f 
+namespace f::enums
 {
 	enum class eLayerType
 	{

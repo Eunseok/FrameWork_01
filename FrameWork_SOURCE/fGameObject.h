@@ -41,14 +41,10 @@ namespace f {
 		}
 
 
-
-
-		/*float GetPositionX() { return mX; }
-		float GetPositionY() { return mY; }*/
 	private:
-		////게임오브젝트의 좌표
-		//float mX;
-		//float mY;
+		void initializeTransform();
+
+	private:
 		std::vector<Component*> mComponents;
 	};
 }
