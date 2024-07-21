@@ -1,6 +1,7 @@
 #pragma once
 #include "fEntity.h"
 #include "fGameObject.h"
+#include "fLayer.h"
 
 namespace f
 {
@@ -15,10 +16,11 @@ namespace f
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
 
-		void AddGameObject(GameObject* gameObject);
+		virtual void OnEnter();
+		virtual void OnExit();
 
+		void AddGameObject(GameObject* gameObj, eLayerType type);
 	private:
-		std::vector<GameObject*> mGameObject;
-
+		std::vector<Layer*> mLayers;
 	};
 }

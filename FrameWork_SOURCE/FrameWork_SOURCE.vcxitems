@@ -18,8 +18,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)fApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fLayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fSpriteRenderer.h" />
@@ -32,6 +37,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)fEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fLayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fSpriteRenderer.cpp" />

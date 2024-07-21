@@ -25,8 +25,20 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)fComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)fTransform.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)fSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fResources.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fSpriteRenderer.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)fTransform.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)fMath.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)fLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)fInput.h">
@@ -56,8 +68,23 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)fComponent.h">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)fTransform.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)fSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fResources.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fSpriteRenderer.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)fTransform.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)fMath.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)fLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)fEnums.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Helpers">
@@ -77,6 +104,9 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{5887fe8d-e263-4267-b0a2-b39aa19e68c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{33a9afdb-763d-412f-a73e-6f28760a257a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

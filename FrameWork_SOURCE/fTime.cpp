@@ -28,7 +28,7 @@ namespace f
 	void Time::Redner(HDC hdc)
 	{
 		static float time = 0.0f;
-		float fps = 1.0f / DeltaTimeValue;
+		static float fps = 1.0f / DeltaTimeValue;
 
 		time += DeltaTimeValue;
 		wchar_t strTime[50] = L"";
@@ -39,7 +39,7 @@ namespace f
 		swprintf_s(strFps, 50, L"Fps : %d", (int)fps);
 		int fpsLen = wcsnlen_s(strFps, 50);
 
-		TextOut(hdc, 0, 0, strTime, timeLen);
-		TextOut(hdc, 0, 20, strFps, fpsLen);
+	/*	TextOut(hdc, 0, 0, strTime, timeLen);
+		TextOut(hdc, 0, 20, strFps, fpsLen);*/
 	}
 }

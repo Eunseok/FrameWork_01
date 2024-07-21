@@ -3,6 +3,9 @@
 #include "fPlayer.h"
 #include "fTransform.h"
 #include "fSpriteRenderer.h"
+#include "fInput.h"
+#include "fTitleScene.h"
+#include "fSceneManager.h"
 
 namespace f
 {
@@ -14,52 +17,19 @@ namespace f
 	}
 	void PlayScene::Initialize()
 	{
-		//for (size_t i = 0; i < 100; i++)
-		//{
-		//	GameObject* objc = new GameObject();
-		//	objc->SetPosition(rand() % 1600, rand() % 900);
-		//	Scene::AddGameObject(objc);
-		//}
-		{
-			Player* pl = new Player();
-			Transform* tr
-				= pl->AddComponent<Transform>();
-			tr->SetName(L"TR");
-			tr->SetPos(800, 450);
+		bg = new Player();
 
-			SpriteRenderer* sr
-				= pl->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
+		Transform* tr
+			= bg->AddComponent<Transform>();
+		tr->SetPos(Vector2(0, 0));
+		tr->SetName(L"TR");
 
-			AddGameObject(pl);
-		}
-		{
-			Player* pl = new Player();
-			Transform* tr
-				= pl->AddComponent<Transform>();
-			tr->SetName(L"TR");
-			tr->SetPos(300, 450);
+		SpriteRenderer* sr
+			= bg->AddComponent<SpriteRenderer>();
+		sr->SetName(L"SR");
+		sr->ImageLoad(L"C:\\Users\\asp67\\source\\repos\\FrameWork_01\\Resources\\CloudOcean.png");
 
-			SpriteRenderer* sr
-				= pl->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(pl);
-		}
-		{
-			Player* pl = new Player();
-			Transform* tr
-				= pl->AddComponent<Transform>();
-			tr->SetName(L"TR");
-			tr->SetPos(100, 650);
-
-			SpriteRenderer* sr
-				= pl->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(pl);
-		}
-
+		AddGameObject(bg, eLayerType::BackGround);
 	}
 	void PlayScene::Update()
 	{
@@ -68,9 +38,23 @@ namespace f
 	void PlayScene::LateUpdate()
 	{
 		Scene::LateUpdate();
+		if (Input::GetKeyDown(eKeyCode::N))
+			SceneManager::LoadScene(L"TitleScene");
 	}
-	void PlayScene::Render(HDC hdc) 
+	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		wchar_t str[50] = L"Play Scene";
+		TextOut(hdc, 0, 0, str, 10);
+	}
+	void PlayScene::OnEnter()
+	{
+
+	}
+	void PlayScene::OnExit()
+	{
+		Transform* tr
+			= bg->GetComponent<Transform>();
+		tr->SetPos(Vector2(0, 0));
 	}
 }

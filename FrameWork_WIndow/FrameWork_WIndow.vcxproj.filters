@@ -10,6 +10,9 @@
     <ClInclude Include="fPlayer.h">
       <Filter>Contents</Filter>
     </ClInclude>
+    <ClInclude Include="fTitleScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -25,6 +28,9 @@
     </ClCompile>
     <ClCompile Include="fPlayer.cpp">
       <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="fTitleScene.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

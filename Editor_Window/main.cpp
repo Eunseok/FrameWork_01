@@ -11,6 +11,8 @@
 
 f::Application application;
 
+ULONG_PTR gpToken;
+Gdiplus::GdiplusStartupInput gpsi;
 
 #define MAX_LOADSTRING 100
 
@@ -81,6 +83,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, //프로그램의 인스턴스 �
         }
     }
 
+    Gdiplus::GdiplusShutdown(gpToken);
 
     //// 기본 메시지 루프입니다:
     //while (GetMessage(&msg, nullptr, 0, 0))
@@ -164,6 +167,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
    
+   Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
+
    //load Scene
    f::LoadScene();
 
