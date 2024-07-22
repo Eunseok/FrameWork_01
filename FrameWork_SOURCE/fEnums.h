@@ -11,4 +11,12 @@ namespace f::enums
 		Player,
 		Max = 16,
 	};
+
+	enum class eReourceType
+	{
+		Texture,
+		AudioClip,
+		Prefab,
+		End,
+	};
 }

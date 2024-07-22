@@ -13,6 +13,7 @@
     <ClInclude Include="fTitleScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="fLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">

@@ -29,6 +29,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)fScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)fTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)fTransform.h" />
   </ItemGroup>
@@ -45,6 +46,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)fScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)fTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)fTransform.cpp" />
   </ItemGroup>

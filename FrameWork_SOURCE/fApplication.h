@@ -16,6 +16,8 @@ namespace f
 		void Update();
 		void LateUpdate();
 		void Render();
+
+		const HDC GetHdc() { return mHdc; }
 		
 	private:
 		void getGetClientRect();

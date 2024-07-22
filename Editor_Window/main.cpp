@@ -6,6 +6,7 @@
 
 #include "..\\FrameWork_SOURCE\\fApplication.h"
 #include "..\\FrameWork_WIndow\\fLoadScene.h"
+#include "..\\FrameWork_WIndow\\fLoadResources.h"
 
 //#pragma comment (lib, "..\\x64\\Debug\\FrameWork_WIndow.lib")
 
@@ -169,7 +170,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
-   //load Scene
+   //LOAD Resources
+   f::LoadResources();
+   //LOAD Scene
    f::LoadScene();
 
    return TRUE; 
